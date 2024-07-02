@@ -28,17 +28,35 @@ const ArrowRight = document.querySelector(".arrow_right");
 
 //Event Listner for Arrows
 
-let baliseArrowLeft = document.querySelector(".arrow_left").addEventListener("click", () => {
+/*let baliseArrowLeft = document.querySelector(".arrow_left").addEventListener("click", () => {
 	console.log("left arrow clicked");
 });
 
 let baliseArrowRight = document.querySelector(".arrow_right").addEventListener("click", () => {
 	console.log("right arrow clicked");
+});*/
+
+ArrowLeft.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex > 0);
+    changeSlide();
+    console.log("left arrow clicked")
+});
+
+ArrowRight.addEventListener("click", () => {
+    currentSlideIndex = (currentSlideIndex < slides.length - 1);
+    changeSlide();
+    console.log("right arrow clicked")
 });
 
 // Functions
 
-function updateSlide(index) {
+function changeSlide(index) {
+    const slide = slides[currentSlideIndex];
+    bannerImg.src = "./Print-it-JS-main/assets/images/slideshow/" + slide.image;
+    tagline.innerHTML = slide.tagLine;
+}
+
+/*function updateSlide(index) {
 	const slide = slides[index];
 	bannerImg.src = "./Print-it-JS-main/assets/images/slideshow/${slide.image}";
 	tagline.innerHTML = slide.tagLine;
@@ -46,4 +64,4 @@ function updateSlide(index) {
 
 function updateSlide(currentSlideIndex) {
 	currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
-}
+}*/
