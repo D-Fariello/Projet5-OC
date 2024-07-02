@@ -37,14 +37,25 @@ let baliseArrowRight = document.querySelector(".arrow_right").addEventListener("
 });*/
 
 ArrowLeft.addEventListener("click", () => {
-    currentSlideIndex = (currentSlideIndex > 0);
+    if (currentSlideIndex > 0) {
+		currentSlideIndex = currentSlideIndex -1;
+	}
+	else {
+		currentSlideIndex = slides.length -1;
+	}
+
     changeSlide();
     console.log("left arrow clicked")
 });
 
 ArrowRight.addEventListener("click", () => {
-    currentSlideIndex = (currentSlideIndex < slides.length - 1);
-    changeSlide();
+    if (currentSlideIndex < slides.length -1) {
+		currentSlideIndex = currentSlideIndex +1;
+	}
+	else {
+		currentSlideIndex = 0;
+	}
+	changeSlide();
     console.log("right arrow clicked")
 });
 
