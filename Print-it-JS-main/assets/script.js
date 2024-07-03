@@ -25,6 +25,7 @@ const bannerImg = document.getElementById("bannerImg");
 const tagline = document.getElementById("tagline");
 const ArrowLeft = document.querySelector(".arrow_left");
 const ArrowRight = document.querySelector(".arrow_right");
+const dotSelected = document.querySelectorAll(".dots");
 
 //Event Listner for Arrows
 
@@ -37,34 +38,43 @@ let baliseArrowRight = document.querySelector(".arrow_right").addEventListener("
 });*/
 
 ArrowLeft.addEventListener("click", () => {
-    if (currentSlideIndex > 0) {
-		currentSlideIndex = currentSlideIndex -1;
+	if (currentSlideIndex > 0) {
+		currentSlideIndex = currentSlideIndex - 1;
 	}
 	else {
-		currentSlideIndex = slides.length -1;
+		currentSlideIndex = slides.length - 1;
 	}
 
-    changeSlide();
-    console.log("left arrow clicked")
+	changeSlide();
+	console.log("left arrow clicked")
 });
 
 ArrowRight.addEventListener("click", () => {
-    if (currentSlideIndex < slides.length -1) {
-		currentSlideIndex = currentSlideIndex +1;
+	if (currentSlideIndex < slides.length - 1) {
+		currentSlideIndex = currentSlideIndex + 1;
 	}
 	else {
 		currentSlideIndex = 0;
 	}
 	changeSlide();
-    console.log("right arrow clicked")
+	console.log("right arrow clicked")
 });
 
 // Functions
 
 function changeSlide(index) {
-    const slide = slides[currentSlideIndex];
-    bannerImg.src = "./Print-it-JS-main/assets/images/slideshow/" + slide.image;
-    tagline.innerHTML = slide.tagLine;
+	const slide = slides[currentSlideIndex];
+	bannerImg.src = "./Print-it-JS-main/assets/images/slideshow/" + slide.image;
+	tagline.innerHTML = slide.tagLine;
+
+
+	dotSelected.forEach((dot, index) => {
+		if (index === currentSlideIndex) {
+			dot.classList.add("dot_selected");
+		} else {
+			dot.classList.remove("dot_selected");
+		}
+	});
 }
 
 /*function updateSlide(index) {
