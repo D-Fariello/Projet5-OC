@@ -57,7 +57,7 @@ ArrowRight.addEventListener("click", () => {
 
 function changeSlide() {
 	const slide = slides[currentSlideIndex]; 
-	bannerImg.src = "./Print-it-JS-main/assets/images/slideshow/" + slide.image;
+	bannerImg.src = "assets/images/slideshow/" + slide.image;
 	tagline.innerHTML = slide.tagLine;
 	updateDots();
 }
