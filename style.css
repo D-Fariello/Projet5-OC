@@ -126,7 +126,7 @@ header {
 #banner .arrow {
 	position: absolute;
 	display: flex;
-	gap:1000px;
+	gap:1300px;
 }
 #banner .arrow_left {
 	left: 10px;
