@@ -73,10 +73,6 @@ function createDots() {
 			dot.classList.add("dot_selected");
 		}
 		dotsContainer.appendChild(dot);
-		dot.addEventListener("click",()=>{
-			currentSlideIndex = index;
-			changeSlide();
-		});
 	})
 }
 
