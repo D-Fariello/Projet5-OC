@@ -66,7 +66,7 @@ function changeSlide() {
 
 function createDots() {
 	dotsContainer.innerHTML='';
-	slides.forEach((slide,index)=>{
+	slides.forEach((index)=>{
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
 		if (index === currentSlideIndex){
